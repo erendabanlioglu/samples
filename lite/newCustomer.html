@@ -1,0 +1,11 @@
+<div class="form-group  col-md-4 col-sm-6 col-xs-12">
+  <label translate="osipliteApp.customer.information.nameAndSurname" for="field_name"  style="margin-right: 5px;">Name and Surname</label>
+  <span  class="glyphicon glyphicon-ok green" ng-hide="formCustomer.name.$invalid"></span>
+  <span class="glyphicon glyphicon-warning-sign red" ng-show="formCustomer.name.$error.minlength || formCustomer.name.$error.maxlength"></span>
+  <input type="text" class="form-control" name="name" id="field_name" ng-minlength="3" ng-maxlength="50"  ng-class="{'borderError': (formCustomer.name.$error.minlength || formCustomer.name.$error.maxlength)}" ng-model="personEditDTO.name" required >
+</div>
+
+
+<select id="scenarioId" ng-model="newCustomerDTO.scenarioId" class="form-control" required>
+  <option ng-repeat="scenario in scenariosList" value="{{::scenario.main.id}}">{{::scenario.main.name}}</option> <!--one time binding-->
+</select> 
